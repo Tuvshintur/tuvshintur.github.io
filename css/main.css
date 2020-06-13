@@ -103,6 +103,9 @@ body {
     .right {
         padding-left: 30px;
     }
+    .right .bullet::before {
+        left: -50px !important;
+    }
 }
 
 .right section {
