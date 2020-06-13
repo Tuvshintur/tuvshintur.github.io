@@ -3,9 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Tuvshintur Portfolio</title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
     </head>
     <body>
-        Coming Soon...
+        <div uk-countdown="date: 2020-06-15T12:00:00-05:00">
+            <span class="uk-countdown-number uk-countdown-days"></span>
+            <span class="uk-countdown-number uk-countdown-hours"></span>
+            <span class="uk-countdown-number uk-countdown-minutes"></span>
+            <span class="uk-countdown-number uk-countdown-seconds"></span>
+        </div>
     </body>
 </html>
