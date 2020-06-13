@@ -12,11 +12,26 @@
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
     </head>
     <body>
-        <div uk-countdown="date: 2020-06-15T12:00:00-05:00">
-            <div class="uk-countdown-label">Days</div>
-            <div class="uk-countdown-label">Hours</div>
-            <div class="uk-countdown-label">Minutes</div>
-            <div class="uk-countdown-label">Seconds</div>
+        <div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: 2020-06-15T12:00:00-05:00">
+            <div>
+                <div class="uk-countdown-number uk-countdown-days"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+            </div>
+            <div class="uk-countdown-separator">:</div>
+            <div>
+                <div class="uk-countdown-number uk-countdown-hours"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+            </div>
+            <div class="uk-countdown-separator">:</div>
+            <div>
+                <div class="uk-countdown-number uk-countdown-minutes"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+            </div>
+            <div class="uk-countdown-separator">:</div>
+            <div>
+                <div class="uk-countdown-number uk-countdown-seconds"></div>
+                <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+            </div>
         </div>
     </body>
 </html>
