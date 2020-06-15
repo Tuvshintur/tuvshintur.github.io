@@ -1,6 +1,15 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #333959;
-    font-family: Roboto, sans-serif;
 }
 
 .container {
@@ -109,7 +118,7 @@ body {
 }
 
 .right section {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .right .bullet {
@@ -134,7 +143,7 @@ body {
     color: white;
     background-color: white;
     position: absolute;
-    left: -90px;
+    left: -85px;
     top: 7px;
     border: 5px solid #333959;
 }
@@ -148,7 +157,6 @@ body {
     list-style-type: none;
     font-weight: 100;
     line-height: 25px;
-    margin: 0 10px;
 }
 
 .right .content a {
