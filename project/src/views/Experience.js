@@ -2,7 +2,7 @@ import React from "react";
 
 const whoAmI = () => {
     return (
-        <section className="Section">
+        <section className="Section  animate__animated animate__fadeInDown">
             <h3 className="Title">Work Experiences</h3>
             <ul className="UnOrderedList">
                 <li className="ListItem">
