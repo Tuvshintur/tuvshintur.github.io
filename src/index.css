@@ -1,0 +1,13 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333959;
+}

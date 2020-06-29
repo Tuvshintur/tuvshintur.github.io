@@ -1,0 +1,27 @@
+.Contact {
+    text-align: center;
+}
+
+.List {
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.ListItem {
+    font-size: 18px;
+    list-style-type: none;
+    font-weight: 100;
+    line-height: 25px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.ListItem i {
+    font-size: 22px;
+    opacity: 0.6;
+    transition: all 100ms linear;
+    margin-bottom: 15px;
+    color: white;
+}
