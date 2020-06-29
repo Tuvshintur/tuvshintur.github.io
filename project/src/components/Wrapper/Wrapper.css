@@ -26,8 +26,11 @@
 
 @media (max-width: 440px) {
     .Title {
-        left: -45px;
+        left: 0;
         font-size: 22px;
+    }
+    .Title:before {
+        left: -45px;
     }
 }
 
