@@ -2,6 +2,9 @@ import React, { Component } from "react";
 
 import Toolbar from "../../components/UI/Toolbar/Toolbar";
 import SideDrawer from "../../components/UI/Toolbar/SideDrawer/SideDrawer";
+import Info from "../../components/Info/Info";
+
+import styles from "./Layout.module.css";
 
 class Layout extends Component {
     state = {
@@ -23,7 +26,12 @@ class Layout extends Component {
             <React.Fragment>
                 <SideDrawer open={this.state.sideDrawerOpen} close={this.sideDrawerCloseHandler} />
                 <Toolbar sideDrawerClicked={this.sideDrawerToggleHandler} />
-                <main>{this.props.children}</main>
+                <main className={styles.Layout}>
+                    <div className={styles.Left}>
+                        <Info />
+                    </div>
+                    <div className={styles.Right}>{this.props.children}</div>
+                </main>
             </React.Fragment>
         );
     }
