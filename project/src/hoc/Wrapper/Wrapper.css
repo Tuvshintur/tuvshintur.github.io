@@ -9,7 +9,7 @@
 }
 
 .Title:before {
-    content: "";
+    content: '';
     width: 25px;
     height: 25px;
     border-radius: 100%;
@@ -44,6 +44,10 @@
 
 .Section {
     margin-bottom: 100px;
+}
+
+.Section:last-of-type {
+    margin-bottom: 0;
 }
 
 .UnOrderedList {

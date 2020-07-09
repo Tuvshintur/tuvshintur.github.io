@@ -26,6 +26,7 @@
     padding-left: 70px;
     margin-left: 20px;
     position: relative;
+    width: calc(100% - 20px);
 }
 
 @media (max-width: 440px) {
