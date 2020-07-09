@@ -25,7 +25,7 @@ export const fetchPostsStart = (categories) => {
 
 export const fetchPosts = (categories, title = 'Posts') => {
     return (dispatch) => {
-        const url = `http://localhost:3001/posts?category=${title}`;
+        const url = `${process.env.REACT_APP_BACKEND_URL}/posts?category=${title}`;
         dispatch(fetchPostsStart(categories));
         axios
             .get(url)
