@@ -32,7 +32,12 @@ const input = ({
             break;
         case 'select':
             inputElement = (
-                <select className={inputClasses.join(' ')} value={value} onChange={changed}>
+                <select
+                    className={inputClasses.join(' ')}
+                    value={value}
+                    onChange={changed}
+                    multiple={elementConfig.multiple}
+                >
                     {elementConfig.options.map((option) => (
                         <option key={option.value} value={option.value}>
                             {option.displayValue}

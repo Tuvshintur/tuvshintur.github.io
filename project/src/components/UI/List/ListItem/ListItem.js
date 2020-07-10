@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ListItem.module.css';
+import TimeAgo from 'react-timeago';
 
 const listItem = ({ item, clicked }) => {
     const tags = item.tags.map((tag, idx) => {
@@ -12,7 +13,9 @@ const listItem = ({ item, clicked }) => {
     return (
         <div className={styles.ListItem} onClick={() => clicked(item.id)}>
             <div className={styles.Misc}>
-                <div className={styles.Date}>{item.createdDate}</div>
+                <div className={styles.Date}>
+                    <TimeAgo date={item.createdDate} />
+                </div>
                 {tags}
             </div>
             <div className={styles.Details}>
