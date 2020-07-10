@@ -20,7 +20,7 @@ const listItem = ({ item, clicked }) => {
             </div>
             <div className={styles.Details}>
                 <h2 className={styles.Title}>{item.title}</h2>
-                <div className={styles.Body}>{item.body}</div>
+                <div className={styles.Body} dangerouslySetInnerHTML={{ __html: item.body }}></div>
                 <div className={styles.Fade}></div>
             </div>
         </div>
