@@ -7,6 +7,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import Modal from '../../components/UI/Modal/Modal';
 import Button from '../../components/UI/Button/Button';
 import Input from '../../components/UI/Input/Input';
+import Preview from '../../components/UI/Preview/Preview';
 import styles from './Thought.module.css';
 import { updateObject, checkValidity } from '../../utils/utility';
 import * as actions from '../../store/action';
@@ -17,74 +18,84 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 
 class Thought extends Component {
-    state = {
-        editorState: EditorState.createEmpty(),
-        form: {
-            title: {
-                elementType: 'input',
-                elementConfig: {
-                    type: 'text',
-                    placeholder: 'Title',
+    constructor(props) {
+        super(props);
+        this.state = {
+            editorState: EditorState.createEmpty(),
+            form: {
+                title: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'text',
+                        placeholder: 'Title',
+                    },
+                    errormessage: 'Please Enter Title',
+                    value: '',
+                    validation: {
+                        required: true,
+                    },
+                    valid: false,
+                    touched: false,
                 },
-                errormessage: 'Please Enter Title',
-                value: '',
-                validation: {
-                    required: true,
+                category: {
+                    elementType: 'select',
+                    elementConfig: {
+                        options: [
+                            {
+                                value: 'Posts',
+                                displayValue: 'Posts',
+                            },
+                            {
+                                value: 'Achievements',
+                                displayValue: 'Achievements',
+                            },
+                        ],
+                    },
+                    errormessage: 'Please Enter Valid category',
+                    value: 'Posts',
+                    validation: {},
+                    valid: true,
                 },
-                valid: false,
-                touched: false,
+                tags: {
+                    elementType: 'select',
+                    elementConfig: {
+                        options: [
+                            {
+                                value: 'nodejs',
+                                displayValue: 'nodejs',
+                            },
+                            {
+                                value: 'react',
+                                displayValue: 'react',
+                            },
+                            {
+                                value: 'js',
+                                displayValue: 'js',
+                            },
+                        ],
+                        multiple: true,
+                    },
+                    errormessage: 'Please Enter Valid tags',
+                    value: [],
+                    validation: {},
+                    valid: true,
+                },
             },
-            category: {
-                elementType: 'select',
-                elementConfig: {
-                    options: [
-                        {
-                            value: 'Posts',
-                            displayValue: 'Posts',
-                        },
-                        {
-                            value: 'Achievements',
-                            displayValue: 'Achievements',
-                        },
-                    ],
-                },
-                errormessage: 'Please Enter Valid category',
-                value: 'Posts',
-                validation: {},
-                valid: true,
-            },
-            tags: {
-                elementType: 'select',
-                elementConfig: {
-                    options: [
-                        {
-                            value: 'nodejs',
-                            displayValue: 'nodejs',
-                        },
-                        {
-                            value: 'react',
-                            displayValue: 'react',
-                        },
-                        {
-                            value: 'js',
-                            displayValue: 'js',
-                        },
-                    ],
-                    multiple: true,
-                },
-                errormessage: 'Please Enter Valid tags',
-                value: [],
-                validation: {},
-                valid: true,
-            },
-        },
-        formIsvalid: false,
-        adding: false,
-    };
+            formIsvalid: false,
+            adding: false,
+            showDetails: false,
+        };
+
+        this.baseState = this.state;
+    }
 
     componentDidMount() {
         this.props.onFetchPosts(this.props.categories);
     }
+
+    resetForm = () => {
+        this.setState(this.baseState);
+    };
 
     onClickCategoryHandler = (title) => {
         const { categories } = this.props;
@@ -96,12 +107,21 @@ class Thought extends Component {
     };
 
     onClickListHandler = (id) => {
-        console.log('list item', id);
+        this.onShowHandler();
+        this.props.onFetchPost(id);
+    };
+
+    onShowHandler = () => {
+        this.setState({ showDetails: true });
+    };
+
+    onCancelShowHandler = () => {
+        this.setState({ showDetails: false });
     };
 
     onAddHandler = (event) => {
         event.preventDefault();
-        this.setState({ adding: true });
+        this.setState(updateObject(this.baseState, { adding: true }));
     };
 
     onCancelAddHandler = () => {
@@ -152,16 +172,18 @@ class Thought extends Component {
         formData = updateObject(formData, { body: draftToHtml(convertToRaw(editorState.getCurrentContent())) });
 
         this.props.onAddPost(formData, this.props.token);
+        this.onCancelAddHandler();
     };
 
     render() {
+        const { adding, showDetails, editorState, form, formIsValid } = this.state;
         const content = this.props.loading ? (
             <Spinner />
         ) : (
             <List listItems={this.props.list} clicked={this.onClickListHandler} />
         );
 
-        const { adding, editorState, form, formIsValid } = this.state;
+        const details = this.props.modalLoading ? <Spinner isWhite={true} /> : <Preview item={this.props.post} />;
 
         const formElementsArray = [];
         for (let key in form) {
@@ -206,6 +228,9 @@ class Thought extends Component {
                     <Modal show={adding} modalClosed={this.onCancelAddHandler}>
                         {formElements}
                     </Modal>
+                    <Modal show={showDetails} modalClosed={this.onCancelShowHandler}>
+                        {details}
+                    </Modal>
                 </div>
                 {this.props.isAuth ? <Button clicked={this.onAddHandler}>Add</Button> : null}
                 <Category categories={this.props.categories} clicked={this.onClickCategoryHandler} />
@@ -223,12 +248,15 @@ const mapStateToProps = (state) => {
         categories: state.post.categories,
         isAuth: state.auth.token !== null,
         token: state.auth.token,
+        post: state.post.post,
+        modalLoading: state.post.modalLoading,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onFetchPosts: (title, categories) => dispatch(actions.fetchPosts(title, categories)),
+        onFetchPost: (id) => dispatch(actions.fetchPost(id)),
         onAddPost: (post, token) => dispatch(actions.addPost(post, token)),
     };
 };

@@ -11,7 +11,7 @@ const listItem = ({ item, clicked }) => {
         );
     });
     return (
-        <div className={styles.ListItem} onClick={() => clicked(item.id)}>
+        <div className={styles.ListItem} onClick={() => clicked(item._id)}>
             <div className={styles.Misc}>
                 <div className={styles.Date}>
                     <TimeAgo date={item.createdDate} />

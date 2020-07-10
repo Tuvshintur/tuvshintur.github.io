@@ -61,3 +61,11 @@
         transform: rotate(360deg);
     }
 }
+
+.onWhite:before {
+    background: #333959;
+}
+
+.onWhite:after {
+    background: #ffffff;
+}

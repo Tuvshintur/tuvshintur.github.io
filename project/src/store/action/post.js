@@ -77,3 +77,39 @@ export const addPost = (post, token) => {
             });
     };
 };
+
+export const fetchPostStart = () => {
+    return {
+        type: actionTypes.FETCH_POST_START,
+        post: {},
+    };
+};
+
+export const fetchPostSuccess = (post) => {
+    return {
+        type: actionTypes.FETCH_POST_SUCCESS,
+        post: post,
+    };
+};
+
+export const fetchPostFailed = (error) => {
+    return {
+        type: actionTypes.FETCH_POST_FAILED,
+        error: error,
+    };
+};
+
+export const fetchPost = (id) => {
+    return (dispatch) => {
+        const url = `${process.env.REACT_APP_BACKEND_URL}/posts/${id}`;
+        dispatch(fetchPostStart());
+        axios
+            .get(url)
+            .then((res) => {
+                dispatch(fetchPostSuccess(res.data));
+            })
+            .catch((error) => {
+                dispatch(fetchPostFailed(error));
+            });
+    };
+};

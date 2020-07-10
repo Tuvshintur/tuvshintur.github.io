@@ -9,7 +9,9 @@ const initState = {
     ],
     error: false,
     loading: false,
+    modalLoading: false,
     message: null,
+    post: {},
 };
 
 const fetchPostsStart = (state, action) => {
@@ -25,15 +27,27 @@ const fetchPostsFailed = (state, action) => {
 };
 
 const addPostStart = (state, action) => {
-    return updateObject(state, { loading: true, message: null });
+    return updateObject(state, { modalLoading: true, message: null });
 };
 
 const addPostSuccess = (state, action) => {
-    return updateObject(state, { loading: false, message: action.message });
+    return updateObject(state, { modalLoading: false, message: action.message });
 };
 
 const addPostFailed = (state, action) => {
-    return updateObject(state, { loading: false, message: action.message });
+    return updateObject(state, { modalLoading: false, message: action.message });
+};
+
+const fetchPostStart = (state, action) => {
+    return updateObject(state, { modalLoading: true, message: null });
+};
+
+const fetchPostSuccess = (state, action) => {
+    return updateObject(state, { modalLoading: false, post: action.post, message: null });
+};
+
+const fetchPostFailed = (state, action) => {
+    return updateObject(state, { modalLoading: false, message: action.message });
 };
 
 export const postReducer = (state = initState, action) => {
@@ -50,6 +64,12 @@ export const postReducer = (state = initState, action) => {
             return addPostSuccess(state, action);
         case actions.ADD_POST_FAILED:
             return addPostFailed(state, action);
+        case actions.FETCH_POST_START:
+            return fetchPostStart(state, action);
+        case actions.FETCH_POST_SUCCESS:
+            return fetchPostSuccess(state, action);
+        case actions.FETCH_POST_FAILED:
+            return fetchPostFailed(state, action);
         default:
             return state;
     }
