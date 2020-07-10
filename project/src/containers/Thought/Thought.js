@@ -229,7 +229,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onFetchPosts: (title, categories) => dispatch(actions.fetchPosts(title, categories)),
-        onAddPost: (post) => dispatch(actions.addPost(post)),
+        onAddPost: (post, token) => dispatch(actions.addPost(post, token)),
     };
 };
 
