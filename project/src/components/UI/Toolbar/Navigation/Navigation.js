@@ -11,7 +11,7 @@ const Navigation = () => {
                 About
             </NavigationItem>
             <NavigationItem link="/thought">Thoughts</NavigationItem>
-            <NavigationItem link="/login">Login</NavigationItem>
+            <NavigationItem link="/auth">Login</NavigationItem>
         </ul>
     );
 };
