@@ -29,6 +29,12 @@ const contact = () => {
             newTab: true,
             iconType: 'fa fa-medium',
         },
+        {
+            link: 'https://drive.google.com/file/d/159ypVettbdKmQPvTrR9j1mxHuSR6rSZQ/view?usp=sharing',
+            linkType: '',
+            newTab: true,
+            iconType: 'fa fa-download',
+        },
     ];
 
     let list = contactInfo.map((contact, index) => {
