@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const whoAmI = () => {
     return (
@@ -8,21 +8,11 @@ const whoAmI = () => {
                 <li className="ListItem">
                     <a
                         className="UnderLinedLink"
-                        href="https://github.com/Tuvshintur/Kanban"
+                        href="https://github.com/Tuvshintur/"
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        Kanban board
-                    </a>
-                </li>
-                <li className="ListItem">
-                    <a
-                        className="UnderLinedLink"
-                        href="https://github.com/Tuvshintur/TimeTracker"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                    >
-                        TimeTracker
+                        I am doing what I want to do so please check my github.
                     </a>
                 </li>
             </ul>
