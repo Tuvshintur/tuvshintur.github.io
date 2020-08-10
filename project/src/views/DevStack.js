@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const whoAmI = () => {
+const devStack = () => {
     return (
         <section className="Section  animate__animated animate__fadeInDown">
             <h3 className="Title">Current Dev Stack</h3>
@@ -11,10 +11,11 @@ const whoAmI = () => {
                 <li className="ListItem">create-react-app</li>
                 <li className="ListItem">Node</li>
                 <li className="ListItem">Express.js</li>
+                <li className="ListItem">Graphql</li>
                 <li className="ListItem">MongoDB</li>
             </ul>
         </section>
     );
 };
 
-export default whoAmI;
+export default devStack;

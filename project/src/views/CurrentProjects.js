@@ -1,6 +1,6 @@
 import React from 'react';
 
-const whoAmI = () => {
+const currentProjects = () => {
     return (
         <section className="Section  animate__animated animate__fadeInDown">
             <h3 className="Title">Current projects</h3>
@@ -8,11 +8,21 @@ const whoAmI = () => {
                 <li className="ListItem">
                     <a
                         className="UnderLinedLink"
-                        href="https://github.com/Tuvshintur/"
+                        href="https://github.com/Tuvshintur/social_clones"
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                        I am doing what I want to do so please check my github.
+                        Clone of popular social sites. /Only front-end/
+                    </a>
+                </li>
+                <li className="ListItem">
+                    <a
+                        className="UnderLinedLink"
+                        href="https://tuvshintur.github.io/React_Roadmap/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        React RoadMap
                     </a>
                 </li>
             </ul>
@@ -20,4 +30,4 @@ const whoAmI = () => {
     );
 };
 
-export default whoAmI;
+export default currentProjects;

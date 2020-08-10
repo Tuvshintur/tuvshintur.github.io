@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const whoAmI = () => {
+const experience = () => {
     return (
         <section className="Section  animate__animated animate__fadeInDown">
             <h3 className="Title">Work Experiences</h3>
@@ -18,7 +18,7 @@ const whoAmI = () => {
                 </li>
                 <li className="ListItem">
                     <a className="UnderLinedLink" href="https://web.able.mn/" target="_blank" rel="noreferrer noopener">
-                        AbleSoft LLC{" "}
+                        AbleSoft LLC
                     </a>
                     <span className="Text-right">01/2016 - 03/2018</span>
                 </li>
@@ -27,4 +27,4 @@ const whoAmI = () => {
     );
 };
 
-export default whoAmI;
+export default experience;

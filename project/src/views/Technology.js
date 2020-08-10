@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const whoAmI = () => {
+const tech = () => {
     return (
         <section className="Section  animate__animated animate__fadeInDown">
             <h3 className="Title">Technologies I have used</h3>
@@ -15,4 +15,4 @@ const whoAmI = () => {
     );
 };
 
-export default whoAmI;
+export default tech;
