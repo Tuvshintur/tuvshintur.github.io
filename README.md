@@ -9,4 +9,4 @@ Released v2 in 06/28/2020
 
 1. Make it web application #done
 2. Improve contents #done
-3. Create blog app
+3. Create blog app #done
