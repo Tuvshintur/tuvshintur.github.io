@@ -30,7 +30,7 @@ const contact = () => {
       iconType: 'fa fa-medium',
     },
     {
-      link: 'https://drive.google.com/file/d/1g4GDoVXDxlMC76GJZI7pmRcHaIU6Jw3L/view?usp=sharing',
+      link: 'https://drive.google.com/file/d/1gPS-sZGKoevL4spJc-DizRQlgcYgsCPk/view?usp=sharing',
       linkType: '',
       newTab: true,
       iconType: 'fa fa-download',
