@@ -15,7 +15,17 @@ const whoAmI = () => {
             Web Developer
           </a>
         </li>
-        <li className="ListItem">Table Tennis Player</li>
+        <li className="ListItem">
+          Table Tennis Player&nbsp;
+          <a
+            className="UnderLinedLink"
+            target="_blank"
+            href="https://www.facebook.com/groups/1179208019519746/permalink/1448437599263452"
+            rel="noreferrer noopener"
+          >
+            (Current achievement)
+          </a>
+        </li>
       </ul>
     </section>
   );

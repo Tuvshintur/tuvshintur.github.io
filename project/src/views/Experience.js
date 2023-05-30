@@ -14,12 +14,20 @@ const experience = () => {
           >
             Grid Dynamics Holdings, Inc
           </a>
+          <a
+            className="UnderLinedLink"
+            href="https://connect.svb.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            &nbsp;(Silicon Valley Bank)
+          </a>
           <span className="Text-right">11/2020 - 02/2023</span>
         </li>
         <li className="ListItem">
           <a
             className="UnderLinedLink"
-            href="https://en.golomtbank.com/"
+            href="https://golomtbank.com/en"
             target="_blank"
             rel="noreferrer noopener"
           >
