@@ -23,7 +23,7 @@ const whoAmI = () => {
             href="https://www.facebook.com/groups/1179208019519746/permalink/1448437599263452"
             rel="noreferrer noopener"
           >
-            (Current achievement)
+            (Latest achievement)
           </a>
         </li>
       </ul>
