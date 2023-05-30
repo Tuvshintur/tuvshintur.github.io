@@ -1,36 +1,36 @@
 .Layout {
-    margin: auto;
-    max-width: 960px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin-top: 80px;
+  margin: auto;
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
 }
 
 @media (max-width: 768px) {
-    .Layout {
-        flex-direction: column;
-    }
+  .Layout {
+    flex-direction: column;
+  }
 }
 
 .Left {
-    width: auto;
-    min-width: 300px;
-    min-height: calc(100vh - 50px);
+  width: auto;
+  min-width: 300px;
+  min-height: calc(100vh - 50px);
 }
 
 .Right {
-    padding-bottom: 50px;
-    color: white;
-    border-left: 5px solid rgba(255, 255, 255, 0.5);
-    padding-left: 70px;
-    margin-left: 20px;
-    position: relative;
-    width: calc(100% - 20px);
+  padding-bottom: 50px;
+  color: white;
+  border-left: 5px solid rgba(255, 255, 255, 0.5);
+  padding-left: 70px;
+  margin-left: 20px;
+  position: relative;
+  width: calc(100% - 20px);
 }
 
 @media (max-width: 440px) {
-    .Right {
-        padding-left: 30px;
-    }
+  .Right {
+    padding-left: 30px;
+  }
 }

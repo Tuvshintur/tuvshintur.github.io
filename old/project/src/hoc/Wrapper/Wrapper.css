@@ -1,0 +1,67 @@
+.Title {
+    font-size: 35px;
+    font-weight: 300;
+    position: relative;
+    margin: 0 0 20px 0;
+    color: white;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.Title:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    color: white;
+    background-color: #ffffff;
+    position: absolute;
+    left: -85px;
+    top: 0px;
+    border: 5px solid #333959;
+}
+.Title:first-of-type:before {
+    top: -1px;
+}
+
+@media (max-width: 440px) {
+    .Title {
+        left: 0;
+        font-size: 22px;
+    }
+    .Title:before {
+        left: -45px;
+    }
+}
+
+.UnderLinedLink {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
+    padding-bottom: 1px;
+}
+
+.Section {
+    margin-bottom: 100px;
+}
+
+.Section:last-of-type {
+    margin-bottom: 0;
+}
+
+.UnOrderedList {
+    padding: 0;
+}
+
+.ListItem {
+    font-size: 18px;
+    list-style-type: none;
+    margin: 10px 0;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.Text-right {
+    float: right;
+}

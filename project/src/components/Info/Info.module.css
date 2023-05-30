@@ -1,38 +1,38 @@
 .Info {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .Image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: 0 0;
-    margin-top: 0px;
-    border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: 0 0;
+  margin-top: 0px;
+  border-radius: 100%;
 }
 
 .Description {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {
-    .Description {
-        margin-left: 15px;
-    }
+  .Description {
+    margin-left: 15px;
+  }
 }
 
 .Description h1 {
-    font-size: 30px;
-    font-weight: 300;
-    margin: 50px 0 0px 0;
+  font-size: 30px;
+  font-weight: 300;
+  margin: 50px 0 0px 0;
 }
 
 .Description h4 {
-    margin-top: 10px;
-    font-weight: 100;
-    font-size: 17px;
+  margin-top: 10px;
+  font-weight: 100;
+  font-size: 17px;
 }

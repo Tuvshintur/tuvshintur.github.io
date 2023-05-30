@@ -1,0 +1,18 @@
+.Thought {
+}
+
+.Black {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .Thought {
+        margin-left: -40px;
+    }
+}
+
+@media (max-width: 440px) {
+    .Thought {
+        margin-left: -10px;
+    }
+}

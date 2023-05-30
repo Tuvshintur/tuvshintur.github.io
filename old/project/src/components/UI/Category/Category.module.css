@@ -1,0 +1,8 @@
+.Category {
+    display: flex;
+    border: 1px solid #333959;
+    border-radius: 10px;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 1);
+    margin-bottom: 25px;
+}

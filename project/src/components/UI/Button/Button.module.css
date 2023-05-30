@@ -1,39 +1,39 @@
 .Button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    outline: none;
-    cursor: pointer;
-    font: inherit;
-    padding: 10px;
-    margin: 10px;
-    font-weight: bold;
-    opacity: 0.8;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  opacity: 0.8;
 }
 
 .Button:first-of-type {
-    margin-left: 0;
-    padding-left: 0;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .Success {
-    color: #5c9210;
+  color: #5c9210;
 }
 
 .Danger {
-    color: #944317;
+  color: #944317;
 }
 
 .Button:first-of-type {
-    margin-left: 0;
-    padding-left: 0;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .Button:disabled {
-    color: #ccc;
-    cursor: not-allowed;
+  color: #ccc;
+  cursor: not-allowed;
 }
 
 .Button:hover {
-    opacity: 1;
+  opacity: 1;
 }
